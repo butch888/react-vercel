@@ -56,7 +56,7 @@ function App() {
 const fetchUsers = async () => {
   setLoading(true);
   try {
-    const response = await axios.get('api/users');
+    const response = await axios.get('/users');
     setUsers(response.data);
     
     // Правильное условие для сообщения
