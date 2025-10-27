@@ -45,7 +45,7 @@ function App() {
     setMessage('');
 
     try {
-      const response = await axios.post('api/users', formData);
+      const response = await axios.post(`${API_BASE_URL}/users`, formData);
       setMessage('Пользователь успешно добавлен!');
       setFormData({ username: '', password: '' }); // Очищаем форму
       console.log('Добавлен пользователь:', response.data);
@@ -83,7 +83,7 @@ const fetchUsers = async () => {
   const deleteUsers = async () => {
     setLoading(true);
     try {
-      await axios.delete('api/users');
+      await axios.delete(`${API_BASE_URL}/users`);
       setUsers([]);
       setMessage('Все пользователи удалены');
     } catch (error) {
